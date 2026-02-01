@@ -12,7 +12,7 @@ buoyant_force = buoyantLoad;
 %% SHEAR AND MOMENT CALCS
 
 % init vars
-x_common = linspace(min(self_weight(:,1)),max(self_weight(:,1)),1000);
+x_common = linspace(min(self_weight(:,1)),max(self_weight(:,1)),interp_rate);
 load = buoyant_force(:,2) + self_weight(:,2);
 
 load_interpolated = interp1(buoyant_force(:,1), load,x_common,'linear');

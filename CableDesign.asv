@@ -10,7 +10,7 @@ maxForcePerCable = 800;  % lbs : self explanatory
 Fc               = 2000; % psi : max compressive strength, tensile assumed to be 10% fc
 canoeHeight      = 17.4; % in  : self explanatory
 lossFactor       = 0.7;  % cable strength loss factor
-phi              = 0.9;  % concrete strength loss factor
+
 
 %% Get Cross Section Data
 centroids = zeros(N);
@@ -50,9 +50,7 @@ bottomstresses = bottomStress(4000,1:interp_rate);
 hold on;
 plot(x_common,topstresses,'Color',[200/255 128/255 0],'LineWidth',2, 'DisplayName','Gunnwale Stress');
 plot(x_common,bottomstresses,'Color',[0/255 200/255 128/255],'LineWidth',2,'DisplayName','Keelline Stress');
-plot(x_common, -Fc*phi, 'Color', [1 0 0], 'LineWidth', 2, 'LineStyle','-', 'DisplayName', 'Max Allowed Compression');
-plot(x_common, 0, 'Color', [1 0 0], 'LineWidth', 2, 'LineStyle','-', 'DisplayName', 'Max Allowed Tension');
-ylim([-Fc Fc]);
+plot(x_common, -Fc, 'Color', [1 0 0], 'LineWidth', 2, )
 xlabel('x-position or length of canoe (in.)');
 ylabel('Internal Stress (psi)');
-legend('Gunnwale Stress', 'Keelline Stress', 'Max Allowed Compression', 'Max Allowed Tension');
+legend('Gunnwale Stress', 'Keelline Stress');

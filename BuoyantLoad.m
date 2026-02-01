@@ -9,10 +9,11 @@ xref  = 0;
 draft_in = 0.63*12;       % change to 0.82*12 for 4-paddler or .63*12 for male tandem (in)
 dead_FOS = 1.5;
 rho_struct = 68.5/1728;   % density of structural mix of concrete (lbf/in^3)
+interp_rate = 1000;       % number of subdivided data points.
 
 %% Load Paddler Cases
 paddlerCases = generatePaddlerLoads();           
-P = paddlerCases.case_2M;  % Choose paddler case here.
+P = paddlerCases.case_4;  % Choose paddler case here.
 
 %% Load Cross Section Information.
 coordinates     = readtable('HullCoordinates.csv'); % input CSV

@@ -13,7 +13,7 @@ interp_rate = 1000;       % number of subdivided data points.
 
 %% Load Paddler Cases
 paddlerCases = generatePaddlerLoads();           
-P = paddlerCases.case_4;  % Choose paddler case here.
+P = paddlerCases.case_2M;  % Choose paddler case here.
 
 %% Load Cross Section Information.
 coordinates     = readtable('HullCoordinates.csv'); % input CSV
@@ -136,7 +136,7 @@ xlabel('x (in)');
 ylabel('Load (lbf/in)');
 title('Buoyant Load, Self Weight, and Paddlers');
 legend('Buoyancy (up)','Self Weight (down)','Paddlers (down)','Location','best');
-
+ylim([-10 10]);
 %% Helper functions
 
 % Calculates the buoyant load for a proposed trim 
@@ -169,5 +169,10 @@ selfWeight  = [xUnique(:), q_self(:)];   % [x  q_self]
 
 disp('Self Weight per cross section:');
 disp(selfWeight);
+disp('Total self-weight:')
+AAAAAA = cumtrapz(flipud(xUnique),flipud(selfWeight))
+disp(cumtrapz(xUnique,selfWeight));
 disp('BuoyantLoad per cross section:');
+disp('Total buoyantLoad:')
+disp(cumtrapz(xUnique,buoyantLoad));
 disp(buoyantLoad);

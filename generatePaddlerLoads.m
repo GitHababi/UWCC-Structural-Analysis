@@ -4,7 +4,7 @@ Wm  = 200 * 1.1;    % assume 200 lbs for male paddler, * 1.1 FOS for variance
 Wf  = 160 * 1.1;          
 
 % Positions
-x_2p   = [ +7.5*12,  -7.5*12 ];     % +-5.0 ft
+x_2p   = [ +7.5*12,  -7.5*12 ];     % +-7.5 ft
 x_4p_i = [ +3*12,  -3*12 ];     % inner +-3.0 ft  female paddlers
 x_4p_o = [ +5.5*12,-5.5*12 ];   % outer +-5.5 ft  male paddlers
 x_3p_i = [ 0 ]; % inner female paddler

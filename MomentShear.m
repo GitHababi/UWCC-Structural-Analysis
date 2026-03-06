@@ -5,7 +5,7 @@ clc;
 
 %% LOADS
 %Point Loads
-paddlers = P
+paddlers = P;
 self_weight = selfWeight;
 buoyant_force = buoyantLoad;
 

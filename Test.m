@@ -33,6 +33,8 @@ hold off;
 
 surface_areas = cumtrapz(unique_x,arc_lengths);
 disp("Surface area on outside of canoe: " + max(surface_areas) + " (in^2), " + max(surface_areas)/144 + " (ft^2)");
+
+
 %% code to find all  mois and centroids
 moi = zeros(size(unique_x));
 centroids = zeros(size(unique_x));

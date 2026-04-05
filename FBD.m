@@ -17,7 +17,7 @@ P = paddlerCases.case_2M;  % Choose paddler case here.
 
 %% Load Cross Section Information.
 coordinates     = readtable('HullCoordinates.csv'); % input CSV
-xCoordinates    = coordinates.("LongitudalPosition");
+xCoordinates    = coordinates.("LongitudinalPosition");
 side            = string(coordinates.Side);
 yCoordinates    = coordinates.Offset; 
 zCoordinates    = coordinates.Height;

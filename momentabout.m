@@ -3,6 +3,5 @@ function moment = momentabout(X,load,xPositions)
 % load with given xPositions
 %   Detailed explanation goes here
     load = load .* (xPositions - X);
-    moment = cumtrapz(xPositions, load);
-    moment = moment(end);
+    moment = trapz(xPositions, load);
 end

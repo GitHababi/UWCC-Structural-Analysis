@@ -13,7 +13,7 @@ interp_rate = 1000;       % number of subdivided data points.
 
 %% Load Paddler Cases
 paddlerCases = generatePaddlerLoads();           
-P = paddlerCases.case_2M;  % Choose paddler case here.
+P = paddlerCases.case_4;  % Choose paddler case here.
 
 %% Load Cross Section Information.
 coordinates     = readtable('HullCoordinates.csv'); % input CSV

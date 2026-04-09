@@ -6,7 +6,7 @@ clc;
 %% Constants 
 gamma = 62.4/1728;        % water density (lbf/in^3)
 xref  = 0;
-draft_in = 0.63*12;       % change to 0.82*12 for 4-paddler or .63*12 for male tandem (in)
+draft_in = 0.82*12;       % change to 0.82*12 for 4-paddler or .63*12 for male tandem (in)
 dead_FOS = 1.5;
 rho_struct = 68.5/1728;   % density of structural mix of concrete (lbf/in^3)
 interp_rate = 1000;       % number of subdivided data points.
@@ -167,12 +167,12 @@ end
 buoyantLoad = [xUnique(:), q_buoy(:)];   % [x  q_buoy]
 selfWeight  = [xUnique(:), q_self(:)];   % [x  q_self]
 
-disp('Self Weight per cross section:');
-disp(selfWeight);
-disp('Total self-weight:')
-AAAAAA = cumtrapz(flipud(xUnique),flipud(selfWeight))
-disp(cumtrapz(xUnique,selfWeight));
-disp('BuoyantLoad per cross section:');
-disp('Total buoyantLoad:')
-disp(cumtrapz(xUnique,buoyantLoad));
-disp(buoyantLoad);
+% disp('Self Weight per cross section:');
+% disp(selfWeight);
+% disp('Total self-weight:')
+% AAAAAA = cumtrapz(flipud(xUnique),flipud(selfWeight))
+% disp(cumtrapz(xUnique,selfWeight));
+% disp('BuoyantLoad per cross section:');
+% disp('Total buoyantLoad:')
+% disp(cumtrapz(xUnique,buoyantLoad));
+% disp(buoyantLoad);

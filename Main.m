@@ -170,8 +170,6 @@ for i = 1:numel(caseNames)
     buoyancyInterp = thisCase.BuoyantDistribution;
     [V, M] = shearmoment(xInterp,(buoyancyInterp + selfWeightInterp),...
         thisCase.PointLoads);
-    % why do you flip the signs? because fuck you sign convention requires
-    % it.
     LoadCases.(caseNames{i}).ShearDistribution = V;
     LoadCases.(caseNames{i}).MomentDistribution = M;
 end

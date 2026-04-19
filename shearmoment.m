@@ -12,7 +12,7 @@ function [V,M] = shearmoment(xPositions,distributedLoads,pointLoads)
     for j = 1:size(pointLoads,2)
             for k = 1:numel(xPositions)
                 if xPositions(k) > pointLoads(1,j)
-                    V(k) = V(k) - pointLoads(2,j);
+                    V(k) = V(k) + pointLoads(2,j);
                 end
             end
     end

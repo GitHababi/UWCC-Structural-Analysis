@@ -61,3 +61,35 @@ hold on
 plot(unique_x,moi);
 plot(unique_x,centroids .* 100,"Color","r");
 hold off;
+
+
+%% test
+
+toPlot = ["RaceStands", "MaleTandem","FemaleTandem",];
+displayName = ["Race Stands", "MaleTandem","FemaleTandem"];
+colors = ["red","blue","green"];
+close;
+hold on;
+for i = 1:numel(toPlot)
+    V = LoadCases.(toPlot(i)).ShearDistribution;
+    
+    plot(xInterp,V,'Color',colors(i),'LineWidth',2,'DisplayName',displayName(i));
+    xlim([xInterp(1) xInterp(end)]);
+    title('Shear Diagram');
+    xlabel('Longitudinal Station (in.)');
+    ylabel('Shear (lbs.)');
+    legend("Location","southeast");
+end
+figure;
+hold on;
+for i = 1:numel(toPlot)
+    M = LoadCases.(toPlot(i)).MomentDistribution;
+    
+    plot(xInterp,M,'Color', colors(i), 'LineWidth', 2, 'DisplayName',displayName(i));
+    xlim([xInterp(1) xInterp(end)]);
+    title('Moment Diagram');
+    xlabel('Longitudinal Station (in.)');
+    ylabel('Bending Moment (lbs.*in.)');
+    legend("Location","southeast");
+    
+end

@@ -18,7 +18,7 @@ for i = 1:numel(caseNames)
     paddlers = LoadCases.(caseNames{i}).PointLoads;
     
     % net force and moment as function of guess
-    netforcefromguess = @(guess) trapz(xInterp,selfWeightInterp) + trapz(xUnique,buoyantdist(guess)) - sum(paddlers(2,:));
+    netforcefromguess = @(guess) trapz(xInterp,selfWeightInterp) + trapz(xUnique,buoyantdist(guess)) + sum(paddlers(2,:));
     netmomentfromguess = @(guess) trapz(xInterp,xInterp.*selfWeightInterp) + trapz(xUnique,xUnique.*buoyantdist(guess)) + sum(paddlers(1,:) .* paddlers(2,:));
     objective = @(guess) (netforcefromguess(guess)^2 + netmomentfromguess(guess)^2)^2 ; % squaring turns 0 into a local min
     % do the optimization!

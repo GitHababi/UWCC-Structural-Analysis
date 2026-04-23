@@ -1,7 +1,7 @@
 function [innerCoords,outerCoords] = crosssectioncoords(x,CoordTable)
 %CROSSSECTIONCOORDS Pulls cross section coordinates from a given x station.
 %   Detailed explanation goes here
-    xCoordinates = CoordTable.LongitudalPosition;
+    xCoordinates = CoordTable.LongitudinalPosition;
     yCoordinates = CoordTable.Offset;
     zCoordinates = CoordTable.Height;
     side         = CoordTable.Side;
